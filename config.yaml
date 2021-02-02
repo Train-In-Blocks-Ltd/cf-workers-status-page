@@ -1,8 +1,7 @@
 settings:
-  title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  title: 'Train In Blocks Status Page'
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
+  daysInHistogram: 30 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'All Systems Operational'
@@ -12,23 +11,26 @@ settings:
   monitorLabelNoData: 'No data'
   dayInHistogramNoData: 'No data'
   dayInHistogramOperational: 'All good'
-  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
+  dayInHistogramNotOperational: ' incident(s)'
 
 monitors:
-  - id: traininblocks-com # unique identifier
+  - id: traininblocks-com
     name: Train In Blocks Landing Site
+    description: 'Our main site with blog'
     url: 'https://traininblocks.com'
 
   - id: api-traininblocks-com
     name: Train In Blocks API
+    description: 'Needed for the app to save your data'
     url: 'https://api.traininblocks.com'
-    method: GET
     expectStatus: 401
 
   - id: app-traininblocks-com
     name: Train In Blocks App
+    description: 'Our kickass app'
     url: 'https://app.traininblocks.com'
     
   - id: auth-traininblocks-com
     name: Train In Blocks Auth
+    description: 'Needed for you to login to the app'
     url: 'https://auth.traininblocks.com'
